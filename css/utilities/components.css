@@ -17,10 +17,20 @@
   text-transform: uppercase;
   color: var(--cor-p5);
   font: 600 1.125rem/1.33 "Poppins", Arial, sans-serif;
+  max-width: max-content;
 }
 
 .botao:hover {
   background: linear-gradient(#ffb60d, #e59317);
+}
+
+.botao.secundario {
+  background: linear-gradient(var(--cor-9), var(--cor-10));
+  color: var(--cor-2);
+}
+
+.botao.secundario:hover {
+  background: linear-gradient(var(--cor-9), #282828);
 }
 
 @media (max-width: 600px) {
