@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   background-color: var(--cor-p1);
-  overflow: hidden;
 }
 
 .depoimento img {
@@ -14,23 +13,35 @@
 
 .depoimento-conteudo {
   padding: 40px 40px 80px 80px;
-  align-self: end;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  overflow: hidden;
+  background: url("../../img/dec/top-left-p.svg") no-repeat top 40px left 40px,
+    url("../../img/dec/bottom-right-p.svg") no-repeat bottom 40px right 40px;
+}
+
+.depoimento-conteudo blockquote {
+  margin-top: auto;
 }
 
 .depoimento-conteudo p {
   max-width: 32ch;
-  font-family: "Merriweather", serif;
+  font-family: Merriweather;
   font-style: italic;
   font-weight: 900;
-  margin-bottom: 32px;
+  margin-bottom: 1em;
   position: relative;
+  z-index: 0;
+  display: block;
 }
 
 .depoimento p::before,
 .depoimento p::after {
-  font-size: 5rem;
   color: var(--cor-p2);
+  font-size: 5rem;
   position: absolute;
+  z-index: -1;
 }
 
 .depoimento p::before {
@@ -41,22 +52,29 @@
 
 .depoimento p::after {
   content: "”";
-  position: absolute;
+  bottom: -60px;
+}
+
+@media (min-width: 1200px) {
+  .depoimento img {
+    max-height: 520px;
+  }
 }
 
 @media (max-width: 800px) {
   .depoimento {
     grid-template-columns: 1fr;
+    text-align: center;
   }
   .depoimento img {
-    max-height: 300px;
+    max-height: 200px;
   }
   .depoimento-conteudo {
     padding: 40px 20px;
-    justify-self: center;
+    align-items: center;
+    background: none;
   }
-  .depoimento p::after,
   .depoimento p::before {
-    font-size: 4rem;
+    left: 0px;
   }
 }

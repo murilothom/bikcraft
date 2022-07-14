@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-  font: 600 1rem/1.5 "Poppins", Arial, sans-serif;
+  font: 400 1rem/1.5 "Poppins", Arial, sans-serif;
 }
 
 .form .col-2 {
